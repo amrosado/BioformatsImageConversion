@@ -57,6 +57,8 @@ class BioformatsFileConversion:
 
             images = self.run_showinf_get_xml_images(target_input_path)
 
+            print("Begin output of {} images from {}".format(len(images), target_input_path))
+
             for image in images:
                 image_index = int(image['id'].split(":")[1])
 
@@ -66,6 +68,9 @@ class BioformatsFileConversion:
 
                 subprocess.run(["bfconvert", "-series", "{}".format(image_index), "{}".format(input_norm_path), "{}".format(norm_output_path)], shell=True, capture_output=True)
                 print("Dumped {} from {}".format(norm_output_path, input_norm_path))
+
+            print("Completed output of {} images from {}".format(len(images), target_input_path))
+
         else:
             raise(Exception("Input must be OME images"))
 
