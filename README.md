@@ -9,8 +9,18 @@ A python script to dump a series of images from an OME metadata library such as 
 ```python BioformatsFileConversion.py```
 3. Wait for all files to be converted.
 
+## Dependencies
+1. Python
+2. Bftools (https://docs.openmicroscopy.org/bio-formats/6.5.0/users/comlinetools/index.html)
+1. BeautifulSoup4
+2. lxml
+
+
 ## What does the code do?
 The code just processes xml output from shoinf in bftools and uses the xml output to dump all image series from a OME Image library using bfconvert.  I wasn't able to do this with a volocity library using bioformats cmd line tools.
 
 ## contact
 If you have any questions or feature requests contact Aaron Rosado (arosad2@protonmail.ch) or use Github Issues.
+
+## Tested
+Tested in Windows using Python 3.9.
